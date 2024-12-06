@@ -1,4 +1,6 @@
+
 import type { Config } from "tailwindcss";
+
 
 export default {
   content: [
@@ -9,8 +11,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'text': '#f1eaf4',
+        'background': '#080509',
+        'primary': '#c6a7d0',
+        'secondary': '#6e3b3b',
+        'accent': '#ad8767',
+        'cards': '#130e14'
+       },
+       fontFamily: {
+        bungee: ['Bungee', 'cursive'],
+        workSans: ['Work Sans', 'sans-serif']
       },
     },
   },
