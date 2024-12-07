@@ -2,7 +2,8 @@
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
+import { FC } from 'react';
 
 
 //Assets
@@ -19,7 +20,7 @@ const bungee = Bungee({
     weight: ['400'],
 });
 
-const Navbar = () => {
+const Navbar: FC = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -60,7 +61,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-48 px-4 py-5 space-y-2 bg-secondary text-text shadow-md rounded-lg z-10"
+                    {...{ className: "absolute right-0 mt-2 w-48 px-4 py-5 space-y-2 bg-secondary text-text shadow-md rounded-lg z-10" }}
                   >
                     <p>Hi! <b>{session.user.name?.split(' ')[0]}</b></p>
                     <hr className=" h-[0.1px] border-text w-full my-2"/>

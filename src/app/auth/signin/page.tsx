@@ -30,7 +30,7 @@ import bg from "../../../../public/images/signin_bg.jpg"
 
 export default function SignIn() {
 
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
   const [email, setEmail] = useState("");
