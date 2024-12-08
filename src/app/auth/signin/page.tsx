@@ -55,10 +55,14 @@ export default function SignIn() {
     if (res?.error) {
       setErrorMessage("Invalid email or password");
     }
+    else{
+      router.push('/')
+    }
+
   };
 
   return (
-    <div className="relative flex min-h-[90svh] min-w-full justify-center items-center">
+    <div className="relative flex min-h-screen min-w-full justify-center items-center">
 
       {status==='unauthenticated' && <div>
         <Image
@@ -75,7 +79,7 @@ export default function SignIn() {
         </div>
 
         <div className="text-center">
-          <div className="w-[30vw] bg-cards backdrop-blur-md px-10 py-10 rounded-md">
+          <div className="min-w-[30vw] mt-10 bg-cards backdrop-blur-md px-10 py-10 rounded-md">
             <h1 className="text-3xl font-bold font-bungee uppercase mb-10">Sign In</h1>
 
             <div className="pb-5">
@@ -98,6 +102,7 @@ export default function SignIn() {
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col py-10">
+              {errorMessage && <p className="mb-5 text-red-600">{errorMessage}</p>}
               <div className="border border-text flex flex-col text-left rounded-md px-2 py-1">
                 <label htmlFor="email" className="text-xs">Email</label>
                 <input
@@ -122,8 +127,7 @@ export default function SignIn() {
                   className="bg-transparent border-none outline-none"
                 />
               </div>
-              {errorMessage && <p>{errorMessage}</p>}
-              <button type="submit" className="mt-5 bg-accent hover:bg-secondary transition-colors py-2 font-semibold">Sign In</button>
+              <button type="submit" className="mt-5 bg-secondary hover:bg-accent transition-colors py-2 font-semibold">Sign In</button>
             </form>
 
             <Link href='/auth/signup'>

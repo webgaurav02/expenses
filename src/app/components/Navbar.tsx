@@ -90,7 +90,7 @@ const Navbar: FC = () => {
               onClick={() => {router.push('/auth/signin')}}
               className="text-text font-semibold bg-secondary hover:bg-accent transition-all hover:scale-105 px-4 py-1 rounded-full"
             >
-              Sign In
+              Login
             </button>
           )}
         </div>
